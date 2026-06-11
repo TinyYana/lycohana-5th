@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lycohana5th.tinyyana.com/sitemap-index.xml
