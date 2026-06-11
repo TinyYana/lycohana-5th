@@ -30,10 +30,18 @@ import { achievementRoles, animePicks, colorRoles, futureProjects, memoryMessage
             <h1 id="hero-title" class="hero-title">{siteCopy.heroTitle}</h1>
             <p class="hero-subtitle">{siteCopy.heroSubtitle}</p>
             <p class="hero-description">{siteCopy.heroDescription}</p>
-            <p class="founded-note">
-              <span>建立日期</span>
-              <strong>{siteCopy.foundedAt}</strong>
-            </p>
+            <div class="hero-stickers" aria-label="社群資訊">
+              <p class="founded-note">
+                <span>建立日期</span>
+                <strong>{siteCopy.foundedAt}</strong>
+              </p>
+              {siteCopy.discordInviteUrl && (
+                <p class="discord-note">
+                  <span>如果你是從這頁才知道這裡</span>
+                  <a href={siteCopy.discordInviteUrl} target="_blank" rel="noreferrer">{siteCopy.discordInviteLabel}</a>
+                </p>
+              )}
+            </div>
           </div>
 
           <aside class="hero-scrap" aria-label="彼岸花剪貼簿裝飾">

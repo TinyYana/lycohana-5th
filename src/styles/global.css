@@ -151,20 +151,95 @@ a {
   font-size: 1.05rem;
 }
 
-.founded-note {
-  margin-top: 32px;
-  display: inline-flex;
+.hero-stickers {
+  display: flex;
   flex-wrap: wrap;
-  gap: 8px 14px;
-  padding: 12px 16px;
-  border: 1px solid var(--border);
-  background: rgba(253, 250, 244, 0.72);
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 640px;
+  margin-top: 32px;
+}
+
+.founded-note,
+.discord-note {
+  position: relative;
+  margin: 0;
   color: var(--muted);
+  box-shadow:
+    0 2px 4px rgba(74, 59, 56, 0.06),
+    0 12px 26px rgba(74, 59, 56, 0.08);
+}
+
+.founded-note {
+  display: inline-grid;
+  gap: 2px;
+  padding: 10px 14px;
+  background: rgba(253, 250, 244, 0.82);
+  rotate: -0.8deg;
+}
+
+.founded-note::before,
+.discord-note::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 18px;
+  width: 44px;
+  height: 14px;
+  background: rgba(202, 160, 167, 0.28);
+  rotate: -3deg;
+}
+
+.founded-note span {
+  color: var(--hint);
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 .founded-note strong {
   color: var(--text);
   font-weight: 400;
+  line-height: 1.45;
+}
+
+.discord-note {
+  display: inline-grid;
+  gap: 4px;
+  max-width: min(100%, 300px);
+  padding: 12px 16px 14px;
+  background: rgba(238, 221, 224, 0.7);
+  rotate: 0.7deg;
+}
+
+.discord-note span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.discord-note a {
+  width: fit-content;
+  color: var(--rose-deep);
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  text-decoration: none;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(179, 64, 79, 0.32);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.22em;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.discord-note a:hover,
+.discord-note a:focus-visible {
+  color: var(--lyco-red);
+  text-decoration-color: currentColor;
+}
+
+.discord-note a:focus-visible {
+  outline: 2px solid var(--lyco-red);
+  outline-offset: 3px;
 }
 
 .hero-scrap {

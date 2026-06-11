@@ -139,5 +139,7 @@ export const siteCopy = {
   heroSubtitle: asText(siteCopyData.heroSubtitle, "此處仍有花開"),
   heroDescription: asText(siteCopyData.heroDescription, "五年了，這裡還在。"),
   foundedAt: asText(siteCopyData.foundedAt, "2021/06/28 22:48"),
+  discordInviteUrl: asText(siteCopyData.discordInviteUrl, ""),
+  discordInviteLabel: asText(siteCopyData.discordInviteLabel, "加入彼岸花社群"),
   footerText: asText(siteCopyData.footerText, "LycoHana 五週年紀念館。")
 };
