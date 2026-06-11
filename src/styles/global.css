@@ -174,7 +174,12 @@ a {
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  transform: rotate(-1.2deg);
+  rotate: -1.2deg;
+  transition: rotate 0.5s ease;
+}
+
+.hero-scrap:hover {
+  rotate: -0.3deg;
 }
 
 .lycoris-mark {
@@ -196,19 +201,25 @@ a {
 }
 
 .role-grid,
-.badge-grid,
-.future-grid {
+.badge-grid {
   display: grid;
   gap: 16px;
 }
 
 .role-card,
 .badge-card,
-.message-card,
-.future-card {
+.message-card {
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: 0 10px 26px rgba(74, 59, 56, 0.05);
+  transition: translate 0.35s ease, rotate 0.35s ease, box-shadow 0.35s ease;
+}
+
+.role-card:hover,
+.badge-card:hover,
+.message-card:hover {
+  translate: 0 -3px;
+  box-shadow: 0 14px 32px rgba(74, 59, 56, 0.09);
 }
 
 .role-card {
@@ -251,27 +262,103 @@ a {
   font-size: 0.96rem;
 }
 
-.badge-card,
-.future-card {
+.badge-card {
   padding: 20px;
 }
 
-.badge-year,
-.future-status {
+.badge-year {
   display: inline-flex;
   margin-bottom: 14px;
   color: var(--rose-deep);
   font-size: 0.88rem;
 }
 
-.badge-year::before,
-.future-status::before {
+.badge-year::before {
   content: "";
   width: 8px;
   height: 8px;
   margin: 0.72em 8px 0 0;
   border-radius: 999px;
   background: var(--lyco-red);
+}
+
+.future-list {
+  padding: 8px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 26px rgba(74, 59, 56, 0.05);
+}
+
+.future-item {
+  padding: 20px 0;
+}
+
+.future-item .card-description {
+  max-width: 680px;
+}
+
+.future-item + .future-item {
+  border-top: 1px dashed var(--border);
+}
+
+.future-item-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.future-status {
+  flex: 0 0 auto;
+  padding: 3px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(202, 160, 167, 0.1);
+  color: var(--rose-deep);
+  font-size: 0.82rem;
+}
+
+.anime-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.anime-card {
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 26px rgba(74, 59, 56, 0.05);
+  transition: translate 0.35s ease, box-shadow 0.35s ease;
+}
+
+.anime-card:hover {
+  translate: 0 -3px;
+  box-shadow: 0 14px 32px rgba(74, 59, 56, 0.09);
+}
+
+.anime-figure {
+  margin: 0;
+  aspect-ratio: 1;
+  background: rgba(226, 213, 201, 0.45);
+  border-bottom: 1px solid var(--border);
+}
+
+.anime-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.anime-card-body {
+  padding: 18px 20px 20px;
+}
+
+.anime-meta {
+  margin: 4px 0 0;
+  color: var(--hint);
+  font-size: 0.82rem;
 }
 
 .timeline {
@@ -324,11 +411,39 @@ a {
 
 .message-wall {
   display: grid;
-  gap: 18px;
+  gap: 34px 20px;
+  padding-top: 14px;
 }
 
+/* 繪馬吊牌：紙卡上緣打孔、掛繩，hover 像被輕輕扶正 */
 .message-card {
-  padding: 22px;
+  position: relative;
+  padding: 32px 22px 22px;
+  rotate: -1deg;
+  transform-origin: 50% 0;
+  background:
+    radial-gradient(circle at 50% 14px, var(--paper) 4px, rgba(74, 59, 56, 0.28) 4.5px, var(--card) 6.5px);
+}
+
+.message-card:nth-child(even) {
+  rotate: 0.8deg;
+}
+
+.message-card::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  translate: -50% 0;
+  width: 16px;
+  height: 34px;
+  background: var(--rose-deep);
+  clip-path: polygon(50% 0%, 100% 100%, 72% 100%, 50% 14%, 28% 100%, 0% 100%);
+}
+
+.message-card:hover {
+  rotate: 0deg;
+  translate: 0 0;
 }
 
 .message-content {
@@ -358,6 +473,74 @@ a {
   text-align: center;
 }
 
+/* 微動效：只在使用者未要求減少動態時啟用 */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes gentle-sway {
+    0%,
+    100% {
+      transform: rotate(-1deg);
+    }
+    50% {
+      transform: rotate(1.4deg);
+    }
+  }
+
+  .hero-copy {
+    animation: rise-in 0.8s ease both;
+  }
+
+  .hero-scrap {
+    animation: fade-in 0.9s ease 0.35s both;
+  }
+
+  .lycoris-mark {
+    animation: gentle-sway 8s ease-in-out infinite;
+    transform-origin: 50% 92%;
+  }
+
+  /* 捲動顯示：class 由 index.astro 的小腳本加上，無 JS 時一切照常顯示 */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .timeline-item.reveal::before {
+    scale: 0;
+    transition: scale 0.45s ease 0.25s;
+  }
+
+  .timeline-item.reveal.is-visible::before {
+    scale: 1;
+  }
+}
+
 @media (min-width: 680px) {
   .section {
     padding: 80px 28px;
@@ -369,7 +552,7 @@ a {
 
   .role-grid,
   .badge-grid,
-  .future-grid {
+  .anime-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
@@ -389,8 +572,7 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .badge-grid,
-  .future-grid {
+  .badge-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

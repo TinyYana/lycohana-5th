@@ -1,30 +1,30 @@
 [
   {
     "id": "role-mist-rose",
-    "description": "目前最多人使用的顏色。這件事比我原本預期的明顯很多。"
+    "description": "最多人用的顏色，多到我有點意外。但最根本的原因是這顏色真的很好看，大家看到就直接選了。"
   },
   {
     "id": "role-silver",
-    "description": "顏色很接近白色，放在 Discord 介面裡其實不算顯眼。"
+    "description": "在 Discord 淺色介面裡其實接近隱形，但選的人一直不少。低調本身大概也是一種選擇。"
   },
   {
     "id": "role-soft-yellow",
-    "description": "是目前這批顏色裡比較少人選的。"
+    "description": "選的人最少。我自己覺得它不難看，可能是因為他是年紀最輕的身份組吧。"
   },
   {
     "id": "role-orange",
-    "description": "這個顏色比較亮，所以在身分組列表裡會很明顯。"
+    "description": "亮到在成員列表裡一眼就能認出來。會選它的人，大概本來就沒打算低調。"
   },
   {
     "id": "role-green",
-    "description": "不是最多人選的顏色，但也不是沒人用。"
+    "description": "選的人不算多，但一直都有。算是長青款，字面意義上的。"
   },
   {
     "id": "role-blue",
-    "description": "目前是第二多人使用的顏色。"
+    "description": "穩穩的第二名。很多社群都喜歡用這顏色，可能大家就是看習慣了。"
   },
   {
     "id": "role-gray",
-    "description": "灰色沒有很搶眼，但使用人數比我想像中多。"
+    "description": "比我想像中多人選。可能潛水的人，也想要一個正式一點的潛水色。"
   }
 ]

@@ -5,6 +5,7 @@ import achievementRoleDetails from "../data/manual/achievement-role-details.json
 import timelineData from "../data/manual/timeline.json";
 import memoryMessagesData from "../data/manual/memory-messages.json";
 import futureProjectsData from "../data/manual/future-projects.json";
+import animePicksData from "../data/manual/anime-picks.json";
 import siteCopyData from "../data/manual/site-copy.json";
 
 type GeneratedRole = {
@@ -36,6 +37,14 @@ type FutureProject = {
   title?: unknown;
   description?: unknown;
   status?: unknown;
+};
+
+type AnimePick = {
+  title?: unknown;
+  meta?: unknown;
+  imageSrc?: unknown;
+  imageAlt?: unknown;
+  description?: unknown;
 };
 
 const asArray = <T>(value: unknown): T[] => Array.isArray(value) ? value as T[] : [];
@@ -85,20 +94,20 @@ const mergeRoles = (generated: unknown, manual: unknown, fallbackDescription: st
 export const colorRoles = mergeRoles(
   generatedColorRoles,
   colorRoleDetails,
-  "這個顏色還在等一段手寫描述。"
+  "這個顏色的介紹我還沒寫，先欠著。"
 );
 
 export const achievementRoles = mergeRoles(
   generatedAchievementRoles,
   achievementRoleDetails,
-  "這枚徽章的故事還在整理中。"
+  "這枚徽章背後的事，我還在想怎麼寫。"
 );
 
 export const timeline = asArray<TimelineItem>(timelineData)
   .map((item) => ({
     year: asText(item.year, ""),
     title: asText(item.title, "尚未命名的節點"),
-    description: asText(item.description, "這一年還在等待補上更完整的記憶。")
+    description: asText(item.description, "這一段的細節我還在回想。")
   }))
   .filter((item) => item.year);
 
@@ -111,9 +120,19 @@ export const memoryMessages = asArray<MemoryMessage>(memoryMessagesData)
 
 export const futureProjects = asArray<FutureProject>(futureProjectsData).map((project) => ({
   title: asText(project.title, "還沒取名的坑洞"),
-  description: asText(project.description, "這個方向還在慢慢長出輪廓。"),
+  description: asText(project.description, "具體還沒想清楚，先掛在這裡。"),
   status: asText(project.status, "未定")
 }));
+
+export const animePicks = asArray<AnimePick>(animePicksData)
+  .map((pick) => ({
+    title: asText(pick.title, ""),
+    meta: asText(pick.meta, ""),
+    imageSrc: asText(pick.imageSrc, ""),
+    imageAlt: asText(pick.imageAlt, asText(pick.title, "動畫推薦圖片")),
+    description: asText(pick.description, "推薦理由我還沒寫，但會放上來就代表我真心推。")
+  }))
+  .filter((pick) => pick.title);
 
 export const siteCopy = {
   heroTitle: asText(siteCopyData.heroTitle, "LycoHana"),
