@@ -1,0 +1,30 @@
+[
+  {
+    "id": "role-mist-rose",
+    "description": "目前最多人使用的顏色。這件事比我原本預期的明顯很多。"
+  },
+  {
+    "id": "role-silver",
+    "description": "顏色很接近白色，放在 Discord 介面裡其實不算顯眼。"
+  },
+  {
+    "id": "role-soft-yellow",
+    "description": "是目前這批顏色裡比較少人選的。"
+  },
+  {
+    "id": "role-orange",
+    "description": "這個顏色比較亮，所以在身分組列表裡會很明顯。"
+  },
+  {
+    "id": "role-green",
+    "description": "不是最多人選的顏色，但也不是沒人用。"
+  },
+  {
+    "id": "role-blue",
+    "description": "目前是第二多人使用的顏色。"
+  },
+  {
+    "id": "role-gray",
+    "description": "灰色沒有很搶眼，但使用人數比我想像中多。"
+  }
+]

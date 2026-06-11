@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">彼岸花線稿</title>
+  <desc id="desc">一朵簡化的彼岸花，使用深紅色花瓣與細長花蕊。</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M160 190 C148 156 136 132 107 112 C82 95 58 93 38 107" stroke="#B3404F" stroke-width="7"/>
+    <path d="M160 190 C146 146 142 113 160 79 C174 53 197 39 225 37" stroke="#B3404F" stroke-width="7"/>
+    <path d="M160 190 C172 153 190 126 224 111 C249 100 275 104 295 122" stroke="#B3404F" stroke-width="7"/>
+    <path d="M160 190 C137 169 113 159 80 161 C53 163 32 177 20 199" stroke="#A6707C" stroke-width="6"/>
+    <path d="M160 190 C184 166 209 154 245 157 C271 160 291 175 302 199" stroke="#A6707C" stroke-width="6"/>
+    <path d="M160 190 C159 152 167 123 196 99 C216 82 241 77 264 84" stroke="#CAA0A7" stroke-width="5"/>
+    <path d="M160 190 C158 154 149 126 122 101 C101 83 76 77 53 85" stroke="#CAA0A7" stroke-width="5"/>
+
+    <path d="M153 190 C137 162 119 141 90 128" stroke="#4A3B38" stroke-width="3" opacity=".55"/>
+    <path d="M164 190 C174 158 190 136 219 123" stroke="#4A3B38" stroke-width="3" opacity=".55"/>
+    <path d="M158 190 C158 155 164 126 184 101" stroke="#4A3B38" stroke-width="3" opacity=".55"/>
+
+    <path d="M156 194 C142 151 118 122 76 99" stroke="#B3404F" stroke-width="3"/>
+    <path d="M160 193 C155 143 166 103 197 65" stroke="#B3404F" stroke-width="3"/>
+    <path d="M165 194 C185 149 216 119 263 103" stroke="#B3404F" stroke-width="3"/>
+    <path d="M149 192 C116 165 82 153 45 158" stroke="#B3404F" stroke-width="3"/>
+    <path d="M171 192 C205 164 239 153 276 159" stroke="#B3404F" stroke-width="3"/>
+
+    <circle cx="76" cy="99" r="5" fill="#B3404F" stroke="none"/>
+    <circle cx="197" cy="65" r="5" fill="#B3404F" stroke="none"/>
+    <circle cx="263" cy="103" r="5" fill="#B3404F" stroke="none"/>
+    <circle cx="45" cy="158" r="4" fill="#B3404F" stroke="none"/>
+    <circle cx="276" cy="159" r="4" fill="#B3404F" stroke="none"/>
+
+    <path d="M160 191 C157 222 146 253 128 286" stroke="#7D6E67" stroke-width="8"/>
+    <path d="M160 191 C170 225 191 252 222 280" stroke="#7D6E67" stroke-width="5" opacity=".55"/>
+  </g>
+</svg>

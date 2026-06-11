@@ -1,0 +1,178 @@
+---
+import "../styles/global.css";
+
+import { achievementRoles, colorRoles, futureProjects, memoryMessages, siteCopy, timeline } from "../lib/site-data";
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={siteCopy.heroDescription} />
+    <title>{siteCopy.heroTitle} 五週年紀念館</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&family=Noto+Serif+TC:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="site-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="hero-mark">
+              <span>彼岸花社群</span>
+              <span>五週年</span>
+            </p>
+            <h1 id="hero-title" class="hero-title">{siteCopy.heroTitle}</h1>
+            <p class="hero-subtitle">{siteCopy.heroSubtitle}</p>
+            <p class="hero-description">{siteCopy.heroDescription}</p>
+            <p class="founded-note">
+              <span>建立日期</span>
+              <strong>{siteCopy.foundedAt}</strong>
+            </p>
+          </div>
+
+          <aside class="hero-scrap" aria-label="彼岸花剪貼簿裝飾">
+            <img class="lycoris-mark" src="/lycoris-mark.svg" alt="彼岸花線稿" />
+            <p class="scrap-caption">不是大型活動，只是把一些可能沒有想知道、但知道了會有點意思的東西收起來。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="colors-title">
+        <div class="section-inner">
+          <header class="section-header">
+            <p class="section-kicker">Color Roles</p>
+            <h2 id="colors-title" class="section-title">花海色彩</h2>
+            <p class="section-note">一些你可能沒有想知道，但知道了會覺得有點意思的資料：現在社群裡哪些顏色最多人選。</p>
+          </header>
+
+          {colorRoles.length > 0 ? (
+            <div class="role-grid">
+              {colorRoles.map((role) => (
+                <article class="role-card">
+                  <div class="color-swatch" style={`background: ${role.color}`} aria-hidden="true"></div>
+                  <div>
+                    <div class="card-title-row">
+                      <h3 class="card-title">{role.name}</h3>
+                      <span class="member-count">{role.memberCount} 人</span>
+                    </div>
+                    <p class="card-description">{role.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p class="empty-state">顏色身分組 snapshot 還沒放進來。這一區會在資料補上後自動出現。</p>
+          )}
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="badges-title">
+        <div class="section-inner">
+          <header class="section-header">
+            <p class="section-kicker">Achievement Roles</p>
+            <h2 id="badges-title" class="section-title">紀念徽章</h2>
+            <p class="section-note">有些是紀念身分組，有些只是功能型身分組。它們不一定很重要，但都能對上某個時間點。</p>
+          </header>
+
+          {achievementRoles.length > 0 ? (
+            <div class="badge-grid">
+              {achievementRoles.map((role) => (
+                <article class="badge-card">
+                  <span class="badge-year">{role.year ?? "年份待補"}</span>
+                  <div class="card-title-row">
+                    <h3 class="card-title">{role.name}</h3>
+                    <span class="member-count">{role.memberCount} 人</span>
+                  </div>
+                  <p class="card-description">{role.description}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p class="empty-state">紀念徽章資料還在整理中。空資料不會讓頁面壞掉，只會先安靜等著。</p>
+          )}
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="timeline-title">
+        <div class="section-inner">
+          <header class="section-header">
+            <p class="section-kicker">Timeline</p>
+            <h2 id="timeline-title" class="section-title">社群年表</h2>
+            <p class="section-note">先放幾個公告裡比較明確的節點。這不是完整社群史，只是先把能確認的東西放上來。</p>
+          </header>
+
+          {timeline.length > 0 ? (
+            <div class="timeline">
+              {timeline.map((item) => (
+                <article class="timeline-item">
+                  <p class="timeline-year">{item.year}</p>
+                  <h3 class="timeline-title">{item.title}</h3>
+                  <p class="timeline-description">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p class="empty-state">年表還沒有節點。之後補上 2021 到 2026 的片段即可。</p>
+          )}
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="messages-title">
+        <div class="section-inner">
+          <header class="section-header">
+            <p class="section-kicker">Memory Wall</p>
+            <h2 id="messages-title" class="section-title">回憶留言牆</h2>
+            <p class="section-note">之後五週年留言板開放後，這裡只放同意公開的留言。如果不想公開，或希望匿名，也可以直接說。</p>
+          </header>
+
+          {memoryMessages.length > 0 ? (
+            <div class="message-wall">
+              {memoryMessages.map((message) => (
+                <article class="message-card">
+                  <blockquote class="message-content">{message.content}</blockquote>
+                  <p class="message-author">— {message.displayName}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p class="empty-state">留言牆還在等第一張便條。資料為空時，這裡會先保持空白而不是崩潰。</p>
+          )}
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="future-title">
+        <div class="section-inner">
+          <header class="section-header">
+            <p class="section-kicker">Future Notes</p>
+            <h2 id="future-title" class="section-title">未來坑洞</h2>
+            <p class="section-note">之後彼岸花會慢慢往「讓大家待得舒服的 ACG 社群」這個方向走。具體要怎麼做，我還在想。</p>
+          </header>
+
+          {futureProjects.length > 0 ? (
+            <div class="future-grid">
+              {futureProjects.map((project) => (
+                <article class="future-card">
+                  <span class="future-status">{project.status}</span>
+                  <h3 class="card-title">{project.title}</h3>
+                  <p class="card-description">{project.description}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p class="empty-state">未來坑洞還沒列出來。這一區可以等想法更穩再補。</p>
+          )}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>{siteCopy.footerText}</p>
+    </footer>
+  </body>
+</html>
