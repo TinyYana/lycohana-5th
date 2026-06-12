@@ -378,6 +378,7 @@ a {
 
 .future-item-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 14px;
@@ -385,6 +386,7 @@ a {
 
 .future-status {
   flex: 0 0 auto;
+  margin-left: auto;
   padding: 3px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -413,8 +415,9 @@ a {
 
 .anime-figure {
   margin: 0;
-  aspect-ratio: 1;
-  background: rgba(226, 213, 201, 0.45);
+  aspect-ratio: 4 / 3;
+  padding: 12px;
+  background: rgba(253, 250, 244, 0.72);
   border-bottom: 1px solid var(--border);
 }
 
@@ -422,7 +425,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -614,6 +617,12 @@ a {
   .timeline-item.reveal.is-visible::before {
     scale: 1;
   }
+
+  @media (max-width: 430px) {
+    .hero-scrap {
+      animation: fade-in 0.45s ease 0.12s both;
+    }
+  }
 }
 
 @media (min-width: 680px) {
@@ -658,11 +667,77 @@ a {
   }
 
   .hero {
+    min-height: auto;
+    padding-block: 36px 44px;
     padding-inline: 16px;
+    align-items: flex-start;
   }
 
   .hero::before {
     inset: 10px;
+  }
+
+  .hero-inner {
+    gap: 22px;
+  }
+
+  .hero-mark {
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3.15rem, 17vw, 4rem);
+  }
+
+  .hero-subtitle {
+    margin-top: 12px;
+    font-size: 1.35rem;
+  }
+
+  .hero-description {
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .hero-stickers {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .founded-note {
+    padding: 9px 12px;
+  }
+
+  .discord-note {
+    max-width: min(100%, 268px);
+    padding: 10px 14px 12px;
+  }
+
+  .hero-scrap {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    min-height: auto;
+    padding: 14px;
+    rotate: -0.8deg;
+  }
+
+  .hero-scrap:hover {
+    rotate: -0.3deg;
+  }
+
+  .lycoris-mark {
+    width: 92px;
+  }
+
+  .scrap-caption {
+    margin: 0;
+    font-size: 0.86rem;
+    line-height: 1.65;
+    text-align: left;
   }
 
   .role-card {
