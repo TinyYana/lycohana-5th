@@ -10,7 +10,7 @@
 
 - 純 Astro + TypeScript。
 - 樣式使用普通 CSS，沒有 React，沒有 UI framework。
-- 全站單頁，由 `src/pages/index.astro` 組出七個 section。
+- 全站單頁，由 `src/pages/index.astro` 組出八個 section。
 - 資料都放在 `src/data/`，build 時讀 JSON。
 - `generated/` 放之後 snapshot 腳本產生的資料。
 - `manual/` 放人工寫的描述、文案、留言與推薦。
@@ -18,15 +18,16 @@
 
 ## 頁面內容
 
-目前單頁由上到下是這七段：
+目前單頁由上到下是這八段：
 
 1. Hero
 2. 花海色彩
 3. 紀念徽章
 4. 社群年表
-5. 動畫推薦
-6. 回憶留言牆
-7. 未來坑洞
+5. Bot v3
+6. 動畫推薦
+7. 回憶留言牆
+8. 未來坑洞
 
 再來如果要補內容，我會優先補 JSON，而不是先改版型。因為這頁的骨架其實已經夠用了，真正還會變動的是資料和文字。
 
@@ -44,6 +45,7 @@
 │   │   └── manual/
 │   │       ├── achievement-role-details.json
 │   │       ├── anime-picks.json
+│   │       ├── bot-v3.json
 │   │       ├── color-role-details.json
 │   │       ├── future-projects.json
 │   │       ├── memory-messages.json
@@ -66,7 +68,7 @@
 資料分成兩邊，這件事很重要：
 
 - `src/data/generated/`：給 snapshot 腳本寫入，只放 Discord 端可以抓到的機械資料，例如 `id`、`name`、`color`、`memberCount`。
-- `src/data/manual/`：給人手動維護，放描述、年份、年表、留言、動畫推薦、站台文案。
+- `src/data/manual/`：給人手動維護，放描述、年份、年表、Bot v3 介紹、留言、動畫推薦、站台文案。
 
 兩邊會在 `src/lib/site-data.ts` 裡用 role id merge。這樣做有點囉嗦，但它可以避免一個很現實的問題：之後如果重跑 snapshot，不會把我手寫的描述整個洗掉。
 

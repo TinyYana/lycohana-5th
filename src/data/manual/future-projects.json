@@ -8,10 +8,5 @@
     "title": "Hiumu",
     "description": "之前測試 LLM 與 Discord Bot 串接的產物。現在先把它當作技術實驗留下來，不包裝成公開企劃。",
     "status": "實驗紀錄"
-  },
-  {
-    "title": "Bot v3",
-    "description": "如果真的要繼續做，應該先整理實際管理、公告與社群維護需求，而不是為了看起來很厲害。",
-    "status": "待整理"
   }
 ]

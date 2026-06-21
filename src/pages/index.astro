@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 import SEO from "../components/SEO.astro";
-import { achievementRoles, animePicks, colorRoles, futureProjects, memoryMessages, siteCopy, timeline } from "../lib/site-data";
+import { achievementRoles, animePicks, botV3, colorRoles, futureProjects, memoryMessages, siteCopy, timeline } from "../lib/site-data";
 ---
 
 <!doctype html>
@@ -131,6 +131,39 @@ import { achievementRoles, animePicks, colorRoles, futureProjects, memoryMessage
         </div>
       </section>
 
+      <section class="section bot-section" aria-labelledby="bot-title">
+        <div class="section-inner bot-layout">
+          <header class="bot-intro">
+            <p class="section-kicker">{botV3.eyebrow}</p>
+            <h2 id="bot-title" class="section-title bot-title">{botV3.title}</h2>
+            <p class="bot-lead">{botV3.lead}</p>
+            {botV3.story && <p class="bot-story">{botV3.story}</p>}
+            {botV3.repositoryUrl && (
+              <a class="bot-repo-link" href={botV3.repositoryUrl} target="_blank" rel="noreferrer">
+                {botV3.repositoryLabel}
+              </a>
+            )}
+          </header>
+
+          <div class="bot-release-sheet">
+            <p class="bot-release-label">Community operations · third edition</p>
+            {botV3.features.length > 0 ? (
+              <div class="bot-feature-list">
+                {botV3.features.map((feature) => (
+                  <article class="bot-feature">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p class="empty-state">Bot v3 的功能整理還沒放上來。</p>
+            )}
+            {botV3.note && <p class="bot-note">{botV3.note}</p>}
+          </div>
+        </div>
+      </section>
+
       <section class="section" aria-labelledby="anime-title">
         <div class="section-inner">
           <header class="section-header">
@@ -190,7 +223,7 @@ import { achievementRoles, animePicks, colorRoles, futureProjects, memoryMessage
           <header class="section-header">
             <p class="section-kicker">Future Notes</p>
             <h2 id="future-title" class="section-title">未來坑洞</h2>
-            <p class="section-note">之後彼岸花會慢慢往「讓大家待得舒服」這個方向走。具體要怎麼做我還在想，所以這一區先誠實地叫坑洞。</p>
+            <p class="section-note">之後彼岸花會慢慢往「讓大家待得舒服」這個方向走。有些還在想，有些已經從坑洞裡做出來了；這裡就照實留下現在的進度。</p>
           </header>
 
           {futureProjects.length > 0 ? (
@@ -222,7 +255,7 @@ import { achievementRoles, animePicks, colorRoles, futureProjects, memoryMessage
 
       if (!prefersReduced && "IntersectionObserver" in window) {
         const targets = document.querySelectorAll<HTMLElement>(
-          ".section-header, .role-card, .badge-card, .timeline-item, .anime-card, .message-card, .future-item, .empty-state"
+          ".section-header, .role-card, .badge-card, .timeline-item, .bot-intro, .bot-release-sheet, .anime-card, .message-card, .future-item, .empty-state"
         );
 
         const settle = (el: HTMLElement) => {

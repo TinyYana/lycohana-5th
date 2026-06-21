@@ -6,6 +6,7 @@ import timelineData from "../data/manual/timeline.json";
 import memoryMessagesData from "../data/manual/memory-messages.json";
 import futureProjectsData from "../data/manual/future-projects.json";
 import animePicksData from "../data/manual/anime-picks.json";
+import botV3Data from "../data/manual/bot-v3.json";
 import siteCopyData from "../data/manual/site-copy.json";
 
 type GeneratedRole = {
@@ -39,6 +40,11 @@ type FutureProject = {
   status?: unknown;
 };
 
+type BotFeature = {
+  title?: unknown;
+  description?: unknown;
+};
+
 type AnimePick = {
   title?: unknown;
   meta?: unknown;
@@ -61,6 +67,11 @@ const asCount = (value: unknown) =>
 const asColor = (value: unknown) => {
   const color = asText(value, "#CAA0A7");
   return /^#[0-9a-fA-F]{6}$/.test(color) ? color : "#CAA0A7";
+};
+
+const asHttpUrl = (value: unknown) => {
+  const url = asText(value, "");
+  return /^https?:\/\//i.test(url) ? url : "";
 };
 
 const mergeRoles = (generated: unknown, manual: unknown, fallbackDescription: string) => {
@@ -123,6 +134,22 @@ export const futureProjects = asArray<FutureProject>(futureProjectsData).map((pr
   description: asText(project.description, "具體還沒想清楚，先掛在這裡。"),
   status: asText(project.status, "未定")
 }));
+
+export const botV3 = {
+  eyebrow: asText(botV3Data.eyebrow, "Bot v3 · 2026"),
+  title: asText(botV3Data.title, "彼岸花 Bot v3"),
+  lead: asText(botV3Data.lead, "第三版 Bot 已經完成，這裡會慢慢補上它的故事。"),
+  story: asText(botV3Data.story, ""),
+  features: asArray<BotFeature>(botV3Data.features)
+    .map((feature) => ({
+      title: asText(feature.title, ""),
+      description: asText(feature.description, "")
+    }))
+    .filter((feature) => feature.title && feature.description),
+  note: asText(botV3Data.note, ""),
+  repositoryUrl: asHttpUrl(botV3Data.repositoryUrl),
+  repositoryLabel: asText(botV3Data.repositoryLabel, "查看 Bot v3 repository")
+};
 
 export const animePicks = asArray<AnimePick>(animePicksData)
   .map((pick) => ({
