@@ -1,31 +1,31 @@
 [
   {
     "id": "badge-second-anniversary",
-    "name": "社群二週年紀念",
+    "name": "2️⃣社群二週年紀念",
     "color": "#11806A",
-    "memberCount": 71
+    "memberCount": 70
   },
   {
     "id": "badge-new-year-2024",
-    "name": "2024新年快樂",
+    "name": "🍦2024 新年快樂",
     "color": "#E91E63",
     "memberCount": 11
   },
   {
     "id": "badge-hope-flower",
-    "name": "於花海中的冀望之花",
+    "name": "🌼於花海中的冀望之花",
     "color": "#FCDDFC",
     "memberCount": 6
   },
   {
     "id": "badge-early-intro",
-    "name": "早期自介者",
+    "name": "😆早期自介者",
     "color": "#F1C40F",
     "memberCount": 4
   },
   {
     "id": "badge-survey",
-    "name": "社群問卷填答獎勵",
+    "name": "😊社群問卷填答獎勵",
     "color": "#E74C3C",
     "memberCount": 3
   }

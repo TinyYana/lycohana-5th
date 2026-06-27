@@ -3,7 +3,13 @@
     "id": "role-mist-rose",
     "name": "霧玫瑰",
     "color": "#EBDAE0",
-    "memberCount": 301
+    "memberCount": 304
+  },
+  {
+    "id": "role-blue",
+    "name": "藍色",
+    "color": "#3498DB",
+    "memberCount": 190
   },
   {
     "id": "role-silver",
@@ -12,33 +18,27 @@
     "memberCount": 131
   },
   {
-    "id": "role-soft-yellow",
-    "name": "淺黃",
-    "color": "#DBE2BF",
-    "memberCount": 16
-  },
-  {
     "id": "role-orange",
     "name": "橘色",
     "color": "#E74C3C",
     "memberCount": 101
   },
   {
-    "id": "role-green",
-    "name": "綠色",
-    "color": "#2ECC71",
-    "memberCount": 48
-  },
-  {
-    "id": "role-blue",
-    "name": "藍色",
-    "color": "#3498DB",
-    "memberCount": 191
-  },
-  {
     "id": "role-gray",
     "name": "灰色",
     "color": "#95A5A6",
     "memberCount": 90
+  },
+  {
+    "id": "role-green",
+    "name": "綠色",
+    "color": "#2ECC71",
+    "memberCount": 47
+  },
+  {
+    "id": "role-soft-yellow",
+    "name": "淺黃",
+    "color": "#DBE2BF",
+    "memberCount": 15
   }
 ]
