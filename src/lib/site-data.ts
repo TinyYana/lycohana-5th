@@ -1,5 +1,6 @@
 import generatedColorRoles from "../data/generated/color-roles.json";
 import generatedAchievementRoles from "../data/generated/achievement-roles.json";
+import snapshotMetaData from "../data/generated/snapshot-meta.json";
 import colorRoleDetails from "../data/manual/color-role-details.json";
 import achievementRoleDetails from "../data/manual/achievement-role-details.json";
 import timelineData from "../data/manual/timeline.json";
@@ -160,6 +161,8 @@ export const animePicks = asArray<AnimePick>(animePicksData)
     description: asText(pick.description, "推薦理由我還沒寫，但會放上來就代表我真心推。")
   }))
   .filter((pick) => pick.title);
+
+export const snapshotUpdatedAt = asText((snapshotMetaData as { updatedAt?: unknown }).updatedAt, "");
 
 export const siteCopy = {
   heroTitle: asText(siteCopyData.heroTitle, "LycoHana"),

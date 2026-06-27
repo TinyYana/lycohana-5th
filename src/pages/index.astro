@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 import SEO from "../components/SEO.astro";
-import { achievementRoles, animePicks, botV3, colorRoles, futureProjects, memoryMessages, siteCopy, timeline } from "../lib/site-data";
+import { achievementRoles, animePicks, botV3, colorRoles, futureProjects, memoryMessages, siteCopy, snapshotUpdatedAt, timeline } from "../lib/site-data";
 ---
 
 <!doctype html>
@@ -247,6 +247,7 @@ import { achievementRoles, animePicks, botV3, colorRoles, futureProjects, memory
 
     <footer class="site-footer">
       <p>{siteCopy.footerText}</p>
+      {snapshotUpdatedAt && <p class="snapshot-updated">身份組資料更新於 {snapshotUpdatedAt}</p>}
     </footer>
 
     <script>

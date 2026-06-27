@@ -1,0 +1,33 @@
+name: Snapshot Discord Roles
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 16 * * *" # 00:00 UTC+8 每天一次
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run snapshot script
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ secrets.DISCORD_GUILD_ID }}
+        run: node scripts/snapshot-roles.mjs
+
+      - name: Commit updated role data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated/achievement-roles.json src/data/generated/color-roles.json src/data/generated/snapshot-meta.json
+          git diff --staged --quiet || git commit -m "chore(data): snapshot Discord role member counts"
+          git push
