@@ -9,7 +9,7 @@
     "id": "role-blue",
     "name": "藍色",
     "color": "#3498DB",
-    "memberCount": 188
+    "memberCount": 189
   },
   {
     "id": "role-silver",
@@ -33,7 +33,7 @@
     "id": "role-green",
     "name": "綠色",
     "color": "#2ECC71",
-    "memberCount": 47
+    "memberCount": 46
   },
   {
     "id": "role-soft-yellow",
