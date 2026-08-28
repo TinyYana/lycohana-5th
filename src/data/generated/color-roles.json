@@ -9,19 +9,19 @@
     "id": "role-blue",
     "name": "藍色",
     "color": "#3498DB",
-    "memberCount": 195
+    "memberCount": 196
   },
   {
     "id": "role-silver",
     "name": "銀色",
     "color": "#F1EDEE",
-    "memberCount": 142
+    "memberCount": 141
   },
   {
     "id": "role-orange",
     "name": "橘色",
     "color": "#E74C3C",
-    "memberCount": 111
+    "memberCount": 112
   },
   {
     "id": "role-gray",
@@ -39,6 +39,6 @@
     "id": "role-soft-yellow",
     "name": "淺黃",
     "color": "#DBE2BF",
-    "memberCount": 23
+    "memberCount": 24
   }
 ]
