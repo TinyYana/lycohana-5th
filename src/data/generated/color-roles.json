@@ -27,7 +27,7 @@
     "id": "role-gray",
     "name": "灰色",
     "color": "#8799AE",
-    "memberCount": 103
+    "memberCount": 104
   },
   {
     "id": "role-green",
@@ -39,6 +39,6 @@
     "id": "role-soft-yellow",
     "name": "淺黃",
     "color": "#D2E587",
-    "memberCount": 35
+    "memberCount": 37
   }
 ]
