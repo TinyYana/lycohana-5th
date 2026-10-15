@@ -3,13 +3,13 @@
     "id": "role-mist-rose",
     "name": "霧玫瑰",
     "color": "#EBDAE0",
-    "memberCount": 399
+    "memberCount": 400
   },
   {
     "id": "role-blue",
     "name": "藍色",
     "color": "#4CADD0",
-    "memberCount": 212
+    "memberCount": 211
   },
   {
     "id": "role-silver",
@@ -39,6 +39,6 @@
     "id": "role-soft-yellow",
     "name": "淺黃",
     "color": "#D2E587",
-    "memberCount": 38
+    "memberCount": 37
   }
 ]
